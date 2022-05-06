@@ -13,7 +13,7 @@ Vue.createApp({
     methods: {
         async helperGetCompliment() {
             try {
-                const response = await axios.get(baseUrl1)
+                const response = await axios.get(baseUrl2)
                 this.posts = await response.data
                 this.error = null
             } catch (ex) {
