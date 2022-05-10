@@ -14,11 +14,18 @@ Vue.createApp({
         }
     },
     mounted() {
+        //run initial load
         this.helperGetFactos()
+        //reload every 5s
+        this.intervalUpdateList()
         },
 
 
     methods: {
+        async intervalUpdateList() {
+            setInterval(this.helperGetFactos,5000);
+        },
+
         async helperGetFactos() {
             try {
                 const response = await axios.get(baseUrl3)
