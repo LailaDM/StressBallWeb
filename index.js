@@ -13,12 +13,10 @@ Vue.createApp({
             dateTimeNow: null
         }
     },
+    mounted() {
+        this.helperGetFactos()
+        },
 
-    computed: {
-        async getList() {
-            this.helperGetFactos()
-        }
-    },
 
     methods: {
         async helperGetFactos() {
