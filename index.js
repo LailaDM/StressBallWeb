@@ -9,8 +9,14 @@ Vue.createApp({
             Compliment: null,
             id: null,
             speed: null,
-            Insult: [],
+            Insults: [],
             dateTimeNow: null
+        }
+    },
+
+    computed: {
+        async getList() {
+            this.helperGetFactos()
         }
     },
 
@@ -18,7 +24,7 @@ Vue.createApp({
         async helperGetFactos() {
             try {
                 const response = await axios.get(baseUrl3)
-                this.Insult = await response.data
+                this.Insults = await response.data
                 this.error = null
             } catch (ex) {
                 alert(ex)

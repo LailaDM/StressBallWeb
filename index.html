@@ -39,28 +39,16 @@
       <th>Hastighed</th>
       <th>Dato</th>
     </tr>
-    <tr>
-      <td v-for="Insult in Insult">
+    <tr v-for="Insult in Insults">
+      <td>
         {{Insult.id}}
       </td>
-      <td v-for="Insult in Insult">
+      <td>
         {{Insult.speed}}
       </td>
-      <td v-for="Insult in Insult">
+      <td>
         {{Insult.dateTimeNow}}
       </td>
-      <td>??</td>
-      <td>04-05-2022 kl 10:38</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>??</td>
-      <td>??</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>??</td>
-      <td>??</td>
     </tr>
   </table>
 
