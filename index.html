@@ -13,6 +13,9 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
+<app id="app">
+
+
 <body>
   <div class="navbar">
     <a href="#" class="active">Forside</a>
@@ -28,6 +31,8 @@
     </div>
   </div>
 
+
+  <button id="getAllButton" v-on:click="helperGetFactos()" class="btn btn-primary">Get all Test Sites</button>
   <table>
     <tr>
       <th>Id</th>
@@ -35,7 +40,15 @@
       <th>Dato</th>
     </tr>
     <tr>
-      <td>1</td>
+      <td v-for="Insult in Insult">
+        {{Insult.id}}
+      </td>
+      <td v-for="Insult in Insult">
+        {{Insult.speed}}
+      </td>
+      <td v-for="Insult in Insult">
+        {{Insult.dateTimeNow}}
+      </td>
       <td>??</td>
       <td>04-05-2022 kl 10:38</td>
     </tr>
@@ -52,6 +65,7 @@
   </table>
 
   <script src="index.js"></script>
+</app>
 </body>
 
 </html>

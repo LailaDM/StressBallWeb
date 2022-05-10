@@ -7,14 +7,17 @@ Vue.createApp({
         return {
             Insult: null,
             Compliment: null,
-            
+            id: null,
+            speed: null,
+            Insult: [],
+            dateTimeNow: null
         }
     },
 
     methods: {
         async helperGetFactos() {
             try {
-                const response = await axios.get(baseUrl2)
+                const response = await axios.get(baseUrl3)
                 this.Insult = await response.data
                 this.error = null
             } catch (ex) {
