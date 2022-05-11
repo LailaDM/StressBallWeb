@@ -5,31 +5,40 @@ const baseUrl3 = "https://newstressballweb.azurewebsites.net/api/StressBall";
 Vue.createApp({
     data() {
         return {
-            Insult: null,
+            data: null,
             Insult2: null,
             Compliment: null,
             id: null,
             speed: null,
-            Insult: [],
+            dataArray: [],
             dateTimeNow: null
         }
     },
     mounted() {
         //run initial load
-        this.helperGetFactos()
+        this.GetAllData()
         //reload every 5s
         this.intervalUpdateList()
         },
 
+    computed: {
+        parseDateComputed(time) {
+            month = time.slice(5,6)
+            date = time.slice(8,9)
+            year = time.slice(0,3)
+            return date + "-" + month + "-" + year + time.slice(11,18)
+        }
+    },
+
     methods: {
         async intervalUpdateList() {
-            setInterval(this.helperGetFactos,5000);
+            setInterval(this.GetAllData,5000);
         },
 
-        async helperGetFactos() {
+        async GetAllData() {
             try {
                 const response = await axios.get(baseUrl3)
-                this.Insult = await response.data
+                this.dataArray = await response.data
                 this.error = null
             } catch (ex) {
                 alert(ex)
@@ -44,5 +53,18 @@ Vue.createApp({
                 alert(ex)
             }
         },
+        parseDate(time) {
+            month = time.slice(5,7)
+            date = time.slice(8,10)
+            year = time.slice(0,4)
+            convertedDate = date + "-" + month + "-" + year
+            console.log("Converted date to:" + convertedDate)
+            return convertedDate
+        },
+        parseTime(time) {
+            convertedDate = time.slice(11,16)
+            console.log("Converted date to:" + convertedDate)
+            return convertedDate
+        }
     }
 }).mount("#app")

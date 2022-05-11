@@ -35,16 +35,20 @@
       <th>Id</th>
       <th>Hastighed</th>
       <th>Dato</th>
+      <th>Tid</th>
     </tr>
-    <tr v-for="Insult in Insult">
+    <tr v-for="data in dataArray">
       <td>
-        {{Insult.id}}
+        {{data.id}}
       </td>
       <td>
-        {{Insult.speed}}
+        {{(data.speed).toFixed(2)}}
       </td>
       <td>
-        {{Insult.dateTimeNow}}
+        {{parseDate(data.dateTimeNow)}}
+      </td>
+      <td>
+        {{parseTime(data.dateTimeNow)}}
       </td>
     </tr>
   </table>
