@@ -34,5 +34,14 @@ Vue.createApp({
                 alert(ex)
             }
         },
+        async helperGetFactos2() {
+            try {
+                const response = await axios.get(baseUrl2)
+                this.Insult = await response.data
+                this.error = null
+            } catch (ex) {
+                alert(ex)
+            }
+        },
     }
 }).mount("#app")
