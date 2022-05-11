@@ -20,7 +20,6 @@ Vue.createApp({
         this.intervalUpdateList()
         },
 
-
     methods: {
         async intervalUpdateList() {
             setInterval(this.helperGetFactos,5000);
