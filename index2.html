@@ -27,15 +27,22 @@
         <th>Hastighed</th>
         <th>Dato</th>
       </tr>
-      <tr>
-        <td>??</td>
-        <td>??</td>
-        <td>??</td>
+      <tr v-for="data in dataArray">
+        <td>
+          {{data.id}}
+        </td>
+        <td>
+          {{data.speed.toFixed(2)}}
+        </td>
+        <td>
+          {{data.dateTimeNow}}
+        </td>
       </tr>
     </table>
 
     <br>
 
+  <button id="getAllButton" v-on:click="GetAllData" class="btn btn-primary">Get all Test Sites</button>
     <div class="row">
       <div class="column" style="background-color:rgb(255, 255, 255);">
         <button id="button" v-on:click="helperGetFactos2()">
@@ -45,10 +52,7 @@
           <p>{{Insult2}}</p>
         </div>
       </div>
-      <div class="column" style="background-color:rgb(227, 21, 21);">
-        <strong>
-          <h3>Stressed!</h3>
-        </strong>
+      <div class="column" id="StressBox" style="background-color:rgb(255, 255, 255);">
       </div>
     </div>
 
