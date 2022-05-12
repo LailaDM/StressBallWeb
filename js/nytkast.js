@@ -59,16 +59,23 @@ Vue.createApp({
         },
 
         async ChangeColour(){
-            if(this.Insult.speed <= 3.2) {
-                this.StressBox.backgroundColor = rgb(17, 252, 17);
-            } else if (this.Insult.speed <= 3.8) {
-                this.StressBox.backgroundColor = rgb(4, 201, 4);
-            } else if (this.Insult.speed <= 4.4) {
-                this.StressBox.backgroundColor = rgb(2, 171, 2);
-            } else if (this.Insult.speed <= 5.0) {
-                this.StressBox.backgroundColor = rgb(255, 255, 0);
-            } else if (this.Insult.speed <= 5.6) {
-                this.StressBox.backgroundColor = rgb(242, 242, 4);
+            let fisk = 0
+            this.dataArray.forEach(element => {
+                fisk = element
+            });
+            console.log(fisk.speed)
+            if(fisk.speed <= 3.2) {
+                this.$refs.StressBox.style.backgroundColor = "rgb(17, 252, 17)";
+            } else if (fisk.speed <= 3.8) {
+                this.$refs.StressBox.style.backgroundColor = "rgb(4, 201, 4)";
+            } else if (fisk.speed <= 4.4) {
+                this.$refs.StressBox.style.backgroundColor = "rgb(2, 171, 2)";
+            } else if (fisk.speed <= 5.0) {
+                this.$refs.StressBox.style.backgroundColor = "rgb(255, 255, 0)";
+            } else if (fisk.speed <= 5.6) {
+                this.$refs.StressBox.style.backgroundColor = "rgb(242, 242, 4)";
+            }else{
+                console.log("Colour box isn't working properly, darling")
             }
         },
     }
