@@ -17,15 +17,6 @@ Vue.createApp({
         this.intervalUpdateList()
     },
 
-    computed: {
-        parseDateComputed(time) {
-            month = time.slice(5, 6)
-            date = time.slice(8, 9)
-            year = time.slice(0, 3)
-            return date + "-" + month + "-" + year + time.slice(11, 18)
-        }
-    },
-
     methods: {
         async intervalUpdateList() {
             setInterval(this.getData, 5000);
