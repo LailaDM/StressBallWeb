@@ -16,9 +16,9 @@
 <body>
   <div id="app">
     <div class="navbar">
-      <a href="#">Forside</a>
-      <a href="/index.html">Liste</a>
-      <a href="/index2.html">Nyt kast</a>
+      <a href="/index.html">Forside</a>
+      <a href="/liste.html">Liste</a>
+      <a href="/nytkast.html">Nyt kast</a>
     </div>
 
     <table>
@@ -26,30 +26,34 @@
         <th>Id</th>
         <th>Hastighed</th>
         <th>Dato</th>
+        <th>Tid</th>
       </tr>
       <tr v-for="data in dataArray">
         <td>
           {{data.id}}
         </td>
         <td>
-          {{data.speed.toFixed(2)}}
+          {{(data.speed).toFixed(2)}}
         </td>
         <td>
-          {{data.dateTimeNow}}
+          {{parseDate(data.dateTimeNow)}}
+        </td>
+        <td>
+          {{parseTime(data.dateTimeNow)}}
         </td>
       </tr>
     </table>
 
     <br>
 
-  <button id="getAllButton" v-on:click="GetAllData" class="btn btn-primary">Get all Test Sites</button>
+  <button id="getButton" v-on:click="GetData" class="btn btn-primary">Get all Test Sites</button>
     <div class="row">
       <div class="column" style="background-color:rgb(255, 255, 255);">
-        <button id="button" v-on:click="helperGetFactos2()">
+        <button id="button" v-on:click="getInsult()">
           Bliv fornærmet din so
         </button>
-        <div id="outputField" v-if="Insult2">
-          <p>{{Insult2}}</p>
+        <div id="outputField" v-if="insult">
+          <p>{{insult}}</p>
         </div>
       </div>
       <div class="column" id="StressBox" style="background-color:rgb(255, 255, 255);">
@@ -110,7 +114,7 @@
       </tr>
     </table>
 
-    <script src="index.js"></script>
+    <script src="js/nytkast.js"></script>
   </div>
 </body>
 
