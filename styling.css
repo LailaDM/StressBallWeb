@@ -3,7 +3,9 @@
 }
 
 /* Style the body */
-body {
+body {  
+  max-width: 100%;
+  overflow-x: hidden;
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 0;
 }
