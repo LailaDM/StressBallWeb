@@ -23,8 +23,6 @@ Vue.createApp({
         //reload every 5s
         this.intervalUpdateList()
         },
-        
-    
 
     computed: {
         parseDateComputed(time) {
@@ -85,7 +83,7 @@ Vue.createApp({
                 const response = await axios.get(baseUrl2)
                 this.Insult = await response.data
                 this.error = null
-                this.Insult = this.Insult[this.Insult.length - 1]
+                this.data = this.data[this.Insult.length - 1]
             } catch (ex) {
                 alert(ex)
             }
