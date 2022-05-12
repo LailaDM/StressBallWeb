@@ -15,20 +15,20 @@ Vue.createApp({
         this.getData()
         //reload every 5s
         this.intervalUpdateList()
-        },
+    },
 
     computed: {
         parseDateComputed(time) {
-            month = time.slice(5,6)
-            date = time.slice(8,9)
-            year = time.slice(0,3)
-            return date + "-" + month + "-" + year + time.slice(11,18)
+            month = time.slice(5, 6)
+            date = time.slice(8, 9)
+            year = time.slice(0, 3)
+            return date + "-" + month + "-" + year + time.slice(11, 18)
         }
     },
 
     methods: {
         async intervalUpdateList() {
-            setInterval(this.getData,5000);
+            setInterval(this.getData, 5000);
         },
 
         async getData() {
@@ -53,16 +53,16 @@ Vue.createApp({
         },
 
         parseDate(time) {
-            month = time.slice(5,7)
-            date = time.slice(8,10)
-            year = time.slice(0,4)
+            month = time.slice(5, 7)
+            date = time.slice(8, 10)
+            year = time.slice(0, 4)
             convertedDate = date + "-" + month + "-" + year
             //console.log("Converted date to:" + convertedDate)
             return convertedDate
         },
 
         parseTime(time) {
-            convertedDate = time.slice(11,16)
+            convertedDate = time.slice(11, 16)
             //console.log("Converted date to:" + convertedDate)
             return convertedDate
         },
