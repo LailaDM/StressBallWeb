@@ -145,6 +145,14 @@ table {
   font-family: Georgia, 'Times New Roman', Times, serif;
   border-collapse: collapse;
   width: 100%;
+  
+}
+
+.test {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-collapse: collapse;
+  position: absolute;
+  bottom:0px;
 }
 
 td, th {
