@@ -27,22 +27,22 @@
         <th>Hastighed</th>
         <th>Dato</th>
       </tr>
-      <tr v-for="Insult in Insult">
+      <tr v-for="data in dataArray">
         <td>
-          {{Insult.id}}
+          {{data.id}}
         </td>
         <td>
-          {{Insult.speed}}
+          {{data.speed.toFixed(2)}}
         </td>
         <td>
-          {{Insult.dateTimeNow}}
+          {{data.dateTimeNow}}
         </td>
       </tr>
     </table>
 
     <br>
 
-  <button id="getAllButton" v-on:click="showMyDiv" class="btn btn-primary">Get all Test Sites</button>
+  <button id="getAllButton" v-on:click="GetAllData" class="btn btn-primary">Get all Test Sites</button>
     <div class="row">
       <div class="column" style="background-color:rgb(255, 255, 255);">
         <button id="button" v-on:click="helperGetFactos2()">
