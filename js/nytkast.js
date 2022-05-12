@@ -58,12 +58,18 @@ Vue.createApp({
             return convertedDate
         },
 
-        // async ChangeColour(){
-        //     if(this.Insult.speed <= 3.2) {
-        //         this.StressBox.backgroundColor = rgb(17, 252, 17);
-        //     } else if (this.Insult.speed <= 3.8) {
-        //         this.StressBox.backgroundColor = rgb(4, 201, 4);
-        //     }
-        // },
+        async ChangeColour(){
+            if(this.Insult.speed <= 3.2) {
+                this.StressBox.backgroundColor = rgb(17, 252, 17);
+            } else if (this.Insult.speed <= 3.8) {
+                this.StressBox.backgroundColor = rgb(4, 201, 4);
+            } else if (this.Insult.speed <= 4.4) {
+                this.StressBox.backgroundColor = rgb(2, 171, 2);
+            } else if (this.Insult.speed <= 5.0) {
+                this.StressBox.backgroundColor = rgb(255, 255, 0);
+            } else if (this.Insult.speed <= 5.6) {
+                this.StressBox.backgroundColor = rgb(242, 242, 4);
+            }
+        },
     }
 }).mount("#app")
