@@ -65,7 +65,7 @@ Vue.createApp({
             });
             console.log(data.speed)
             if(data.speed <= 3.2) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(17, 252, 17)";
+                this.$refs.compliment.StressBox.style.backgroundColor = "rgb(17, 252, 17)";
             } else if (data.speed <= 3.8) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(4, 201, 4)";
             } else if (data.speed <= 4.4) {
