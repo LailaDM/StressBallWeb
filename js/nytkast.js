@@ -7,26 +7,33 @@ Vue.createApp({
         return {
             compliment: null,
             dataArray: [],
-            insult: null,
+            message: null,
+            oldID: 0,
         }
     },
     mounted() {
         //run initial load
         this.getData()
         //reload every 5s
-        this.intervalUpdateList()
+        this.intervalUpdate()
+
+    },
+
+    updated() {
+        this.changeColour()
+        this.messageHandler()
     },
 
     methods: {
-        async intervalUpdateList() {
-            setInterval(this.getData, 5000);
+        async intervalUpdate() {
+            setInterval(this.getData, 5000);      
         },
 
         async getData() {
             try {
                 const response = await axios.get(stressUrl)
                 this.dataArray = await response.data.slice(-1) //get last object in list with slice
-                console.log(this.dataArray)
+                //console.log("data retrieved")
                 this.error = null
             } catch (ex) {
                 alert(ex)
@@ -36,11 +43,41 @@ Vue.createApp({
         async getInsult() {
             try {
                 const response = await axios.get(insultUrl)
-                this.insult = await response.data
+                this.message = await response.data
                 this.error = null
             } catch (ex) {
                 alert(ex)
             }
+        },
+
+        async getCompliment() {
+            try {
+                const response = await axios.get(complimentUrl)
+                string = await response.data.compliment
+                this.message = string.charAt(0).toUpperCase() + string.slice(1)
+                this.error = null
+            } catch (ex) {
+                alert(ex)
+            }
+        },
+
+        async messageHandler() {
+            let data = 0
+            this.dataArray.forEach(element => {
+                data = element
+            });
+            if(this.oldID != data.id) {
+                this.oldID = data.id
+                if(data.speed < 4) {
+                    //console.log("message handler requested insult")
+                    this.getInsult()
+                } else {
+                    //console.log("message handler requested compliment")
+                    this.getCompliment()
+                }
+            }
+            
+            
         },
 
         parseDate(time) {
@@ -58,7 +95,7 @@ Vue.createApp({
             return convertedDate
         },
 
-        async ChangeColour(){
+        async changeColour(){
             let data = 0
             this.dataArray.forEach(element => {
                 data = element
@@ -89,7 +126,7 @@ Vue.createApp({
             } else if (data.speed <= 10.6) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(167, 3, 3)";
             }else{
-                console.log("Colour box isn't working properly, darling")
+                console.log("Colour box error")
             }
         },
     }
