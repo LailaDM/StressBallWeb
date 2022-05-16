@@ -26,8 +26,7 @@ Vue.createApp({
 
     methods: {
         async intervalUpdate() {
-            setInterval(this.getData, 5000);    
-            //setInterval(this.messageHandler, 5000);         
+            setInterval(this.getData, 5000);      
         },
 
         async getData() {
