@@ -33,6 +33,7 @@ body {
 }
 
 .test {
-  font-size:24px;
-  position: absolute;
+  font-family: Arial;
+  height: 250px;
+  font-size:24px
 }
