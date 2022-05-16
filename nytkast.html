@@ -57,15 +57,14 @@
 
     <br>
 
-    <button id="ChangeColourButton" v-on:click="ChangeColour" class="btn btn-primary">Change Color of the box</button>
+    <!-- <button id="ChangeColourButton" v-on:click="ChangeColour" class="btn btn-primary">Change Color of the box</button>
     <button id="getButton" v-on:click="GetData" class="btn btn-primary">Get all Test Sites</button>
+    <button id="button" v-on:click="getCompliment()">Bliv fornærmet din so</button> -->
     <div class="row">
       <div class="colourBox" style="background-color:rgb(255, 255, 255);">
-        <button id="button" v-on:click="getInsult()">
-          Bliv fornærmet din so
-        </button>
-        <div id="outputField" v-if="insult">
-          <p style="font-size:24px">{{insult}}</p>
+
+        <div id="outputField" v-if="message">
+          <p style="padding-left:1em; font-size:24px">{{message}}</p>
         </div>
       </div>
       <div class="colourBox" ref="StressBox" style="background-color:rgb(255, 0, 255);">
