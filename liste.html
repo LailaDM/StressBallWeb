@@ -39,11 +39,11 @@
         <th>Dato</th>
         <th>Tid</th>
       </tr>
-      <tr v-for="data in dataArray">
+      <tr id="datarow" v-for="data in dataArray">
         <td>
           {{data.id}}
         </td>
-        <td id="MainList">  
+        <td>  
           {{(data.speed).toFixed(2)}}
         </td>
         <td>
