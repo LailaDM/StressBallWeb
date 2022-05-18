@@ -16,7 +16,7 @@
 <body style="max-width: 100%; overflow-x: hidden;">
   <div id="app">
     <nav style="padding-left:1em" class="navbar navbar-expand-sm bg-dark navbar-dark">
-      <a class="navbar-brand" href="index.html">Home</a>
+      <a class="navbar-brand" href="nytkast.html">Home</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -66,35 +66,17 @@
         </div>
       </div>
       <div class="colourBox" ref="StressBox" style="background-color:rgb(0, 255, 0);">
-        <table style = "margin-left:auto; margin-right:auto">
+        <table style="margin-left:auto; margin-right:auto">
           <tr v-for="data in dataArray">
-            <td class="test">
+            <td class="speedInBox">
               {{(data.speed).toFixed(2)}}
             </td>
+          </tr>
         </table>
-        </tr>
       </div>
     </div>
-
-    <!-- <table>
-      <tr>
-        <th style="background-color:red;"></th>
-        <th style="background-color:rgb(204, 0, 0);"></th>
-        <th style="background-color:rgb(102, 51, 0);"></th>
-        <th style="background-color:rgb(153, 102, 51);"></th>
-        <th style="background-color:rgb(204, 102, 153);"></th>
-        <th style="background-color:rgb(255, 115, 0);"></th>
-        <th style="background-color:rgb(255, 174, 0);"></th>
-        <th style="background-color:rgb(255, 255, 0);"></th>
-        <th style="background-color:rgb(255, 255, 153);"></th>
-        <th style="background-color:rgb(102, 204, 255);"></th>
-        <th style="background-color:rgb(51, 153, 255);"></th>
-        <th style="background-color:rgb(51, 204, 51);"></th>
-        <th style="background-color:rgb(0, 153, 51);"></th>
-      </tr>
-      -->
-
-    <table class="buttom bg-dark"  style="background-color: #dddddd;">
+    <!-- <button id="button" v-on:click="testMethod()">Play</button> -->
+    <table class="buttom bg-dark" style="background-color: #dddddd;">
       <tr>
         <th class="buttomColour" style="background-color:rgb(17, 252, 17);"></th>
         <th class="buttomColour" style="background-color:rgb(4, 201, 4);"></th>
