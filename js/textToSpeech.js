@@ -62,6 +62,7 @@ document.querySelector("#start").addEventListener("click", () => {
 
   // Start Speaking
   window.speechSynthesis.speak(speech);
+  console.log(speech)
 });
 
 document.querySelector("#pause").addEventListener("click", () => {
