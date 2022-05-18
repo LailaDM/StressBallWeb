@@ -50,6 +50,21 @@ Vue.createApp({
             }
         },
 
+       async testMethod () {
+        const playButton = document.getElementById('play-button')
+        playButton.addEventListener('click', () => {
+            
+                const utterance = new SpeechSynthesisUtterance(this.message)
+                utterance.rate = 1
+                speechSynthesis.speak(utterance)
+               
+            
+})
+
+
+       },
+        
+
         async getCompliment() {
             try {
                 const response = await axios.get(complimentUrl)
