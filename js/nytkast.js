@@ -26,7 +26,7 @@ Vue.createApp({
 
     methods: {
         async intervalUpdate() {
-            setInterval(this.getData, 5000);      
+            setInterval(this.getData, 5000);
         },
 
         async getData() {
@@ -50,6 +50,15 @@ Vue.createApp({
             }
         },
 
+        async speechSynthesis() {
+            const utterance = new SpeechSynthesisUtterance(this.message)
+            utterance.rate = 1
+            speechSynthesis.speak(utterance)
+
+
+        },
+
+
         async getCompliment() {
             try {
                 const response = await axios.get(complimentUrl)
@@ -66,18 +75,21 @@ Vue.createApp({
             this.dataArray.forEach(element => {
                 data = element
             });
-            if(this.oldID != data.id) {
+            if (this.oldID != data.id) {
                 this.oldID = data.id
-                if(data.speed < 4) {
+                if (data.speed < 4) {
                     //console.log("message handler requested insult")
                     this.getInsult()
+                    setTimeout(() => {this.speechSynthesis()},500)
+                    
                 } else {
                     //console.log("message handler requested compliment")
                     this.getCompliment()
+                    setTimeout(() => {this.speechSynthesis()},500)
                 }
             }
-            
-            
+
+
         },
 
         parseDate(time) {
@@ -95,13 +107,13 @@ Vue.createApp({
             return convertedDate
         },
 
-        async changeColour(){
+        async changeColour() {
             let data = 0
             this.dataArray.forEach(element => {
                 data = element
             });
-            console.log(data.speed)
-            if(data.speed < 4.0) {
+            //console.log(data.speed)
+            if (data.speed < 4.0) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(17, 252, 17)";
             } else if (data.speed <= 4.6) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(4, 201, 4)";
@@ -125,7 +137,7 @@ Vue.createApp({
                 this.$refs.StressBox.style.backgroundColor = "rgb(201, 5, 5)";
             } else if (data.speed > 10.6) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(167, 3, 3)";
-            }else{
+            } else {
                 console.log("Colour box error")
             }
         },
