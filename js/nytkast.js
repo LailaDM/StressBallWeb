@@ -101,7 +101,7 @@ Vue.createApp({
                 data = element
             });
             console.log(data.speed)
-            if(data.speed <= 4.0) {
+            if(data.speed < 4.0) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(17, 252, 17)";
             } else if (data.speed <= 4.6) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(4, 201, 4)";
@@ -123,7 +123,7 @@ Vue.createApp({
                 this.$refs.StressBox.style.backgroundColor = "rgb(230, 4, 4, 0.995)";
             } else if (data.speed <= 10.0) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(201, 5, 5)";
-            } else if (data.speed <= 10.6) {
+            } else if (data.speed > 10.6) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(167, 3, 3)";
             }else{
                 console.log("Colour box error")
