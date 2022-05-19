@@ -2,38 +2,115 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stressball - Forside</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="styling.css">
-    <script src="https://unpkg.com/vue@next"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stressball - Nyt Kast</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="styling.css">
+  <script src="https://unpkg.com/vue@next"></script>
 </head>
 
 <body style="max-width: 100%; overflow-x: hidden;">
-    <div id="app">
-        <nav style="padding-left:1em" class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <a class="navbar-brand" href="index.html">Home</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="liste.html">Liste</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="nytkast.html">Nyt kast</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+  <div id="app">
+    <nav style="padding-left:1em" class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <a class="navbar-brand" href="index.html">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" style="color: #FFFFFF;" href="liste.html">Liste</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: #FFFFFF;" href="index.html">Nyt kast</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-        <!-- <script src="js/index.js"></script> -->
+    <table class="table table-striped">
+      <tr>
+        <th>Id</th>
+        <th>Hastighed</th>
+        <th>Dato</th>
+        <th>Tid</th>
+      </tr>
+      <tr v-for="data in dataArray">
+        <td>
+          {{data.id}}
+        </td>
+        <td>
+          {{(data.speed).toFixed(2)}}
+        </td>
+        <td>
+          {{parseDate(data.dateTimeNow)}}
+        </td>
+        <td>
+          {{parseTime(data.dateTimeNow)}}
+        </td>
+      </tr>
+    </table>
+
+    <!-- <button id="ChangeColourButton" v-on:click="ChangeColour" class="btn btn-primary">Change Color of the box</button>
+    <button id="getButton" v-on:click="GetData" class="btn btn-primary">Get all Test Sites</button>
+    <button id="button" v-on:click="getCompliment()">Bliv fornærmet din so</button> -->
+    <div class="row">
+      <div class="colourBox" style="background-color:rgb(255, 255, 255);">
+
+        <div id="outputField" v-if="message">
+          <p style="padding-left:1em; font-size:24px; text-align: center;">{{message}}</p>
+        </div>
+      </div>
+      <div class="colourBox" ref="StressBox" style="background-color:rgb(0, 255, 0);">
+        <table style="margin-left:auto; margin-right:auto">
+          <tr v-for="data in dataArray">
+            <td class="speedInBox">
+              {{(data.speed).toFixed(2)}}
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
+    <!-- <button id="button" v-on:click="testMethod()">Play</button> -->
+    <table class="buttom bg-dark" style="background-color: #dddddd;">
+      <tr>
+        <th class="buttomColour" style="background-color:rgba(255, 0, 0);"></th>
+        <th class="buttomColour" style="background-color:rgba(230, 4, 4, 0.995);"></th>
+        <th class="buttomColour" style="background-color:rgb(201, 5, 5);"></th>
+        <th class="buttomColour" style="background-color:rgb(167, 3, 3);"></th>
+        <th class="buttomColour" style="background-color:rgb(255, 255, 0);"></th>
+        <th class="buttomColour" style="background-color:rgb(242, 242, 4);"></th>
+        <th class="buttomColour" style="background-color:rgb(218, 218, 22);"></th>
+        <th class="buttomColour" style="background-color:rgb(203, 203, 33);"></th>
+        <th class="buttomColour" style="background-color:rgb(17, 252, 17);"></th>
+        <th class="buttomColour" style="background-color:rgb(4, 201, 4);"></th>
+        <th class="buttomColour" style="background-color:rgb(2, 171, 2);"></th>
+        <th class="buttomColour" style="background-color:rgb(3, 142, 3);"></th>
+      </tr>
+
+      <tr>
+        <th style="text-align:center;color: #FFFFFF;">4</th>
+        <th style="text-align:center;color: #FFFFFF;">5</th>
+        <th style="text-align:center;color: #FFFFFF;">6</th>
+        <th style="text-align:center;color: #FFFFFF;">7</th>
+        <th style="text-align:center;color: #FFFFFF;">8</th>
+        <th style="text-align:center;color: #FFFFFF;">9</th>
+        <th style="text-align:center;color: #FFFFFF;">10</th>
+        <th style="text-align:center;color: #FFFFFF;">11</th>
+        <th style="text-align:center;color: #FFFFFF;">12</th>
+        <th style="text-align:center;color: #FFFFFF;">13</th>
+        <th style="text-align:center;color: #FFFFFF;">14</th>
+        <th style="text-align:center;color: #FFFFFF;">15</th>
+      </tr>
+
+    </table>
+
+    <script src="js/nytkast.js"></script>
+  </div>
 </body>
 
 </html>
