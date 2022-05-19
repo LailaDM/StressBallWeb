@@ -114,13 +114,13 @@ Vue.createApp({
             });
             //console.log(data.speed)
             if (data.speed < 4.0) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(17, 252, 17)";
+                this.$refs.StressBox.style.backgroundColor = "rgb(255, 0, 0)";
             } else if (data.speed <= 4.6) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(4, 201, 4)";
+                this.$refs.StressBox.style.backgroundColor = "rgb(230, 4, 4)";
             } else if (data.speed <= 5.2) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(2, 171, 2)";
+                this.$refs.StressBox.style.backgroundColor = "rgb(201, 5, 5)";
             } else if (data.speed <= 5.8) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(3, 142, 3)";
+                this.$refs.StressBox.style.backgroundColor = "rgb(167, 3, 3)";
             } else if (data.speed <= 6.4) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(255, 255, 0)";
             } else if (data.speed <= 7.0) {
@@ -130,13 +130,13 @@ Vue.createApp({
             } else if (data.speed <= 8.2) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(203, 203, 33)";
             } else if (data.speed <= 8.8) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(255, 0, 0)";
+                this.$refs.StressBox.style.backgroundColor = "rgb(17, 252, 17)";
             } else if (data.speed <= 9.4) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(230, 4, 4, 0.995)";
+                this.$refs.StressBox.style.backgroundColor = "rgb(4, 201, 4,)";
             } else if (data.speed <= 10.0) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(201, 5, 5)";
+                this.$refs.StressBox.style.backgroundColor = "rgb(2, 171, 2)";
             } else if (data.speed > 10.6) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(167, 3, 3)";
+                this.$refs.StressBox.style.backgroundColor = "rgb(3, 142, 3)";
             } else {
                 console.log("Colour box error")
             }
