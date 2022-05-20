@@ -4,13 +4,15 @@ Vue.createApp({
     data() {
         return {
             dataArray: [],
+            sortSwitchId: 1,
+            sortSwitchSpeed: 1,
         }
     },
     mounted() {
         //run initial load
         this.GetAllData()
         //reload every 5s
-        this.intervalUpdateList()
+        //this.intervalUpdateList()
     },
 
     methods: {
@@ -26,6 +28,34 @@ Vue.createApp({
                 alert(ex)
             }
         },
+        sortById() {
+            dataArray = this.dataArray
+            this.sortSwitchSpeed = 1
+            document.getElementById('idSortButton').style['text-decoration']='underline'
+            document.getElementById('speedSortButton').style['text-decoration']='none'
+            if (this.sortSwitchId === 1) {
+                this.dataArray = dataArray.sort((a, b) => a.id < b.id ? 1 : -1)
+                this.sortSwitchId = -1
+            }
+            else {
+                this.dataArray = dataArray.sort((a, b) => a.id > b.id ? 1 : -1)
+                this.sortSwitchId = 1
+            }
+        },
+        sortBySpeed() {
+            dataArray = this.dataArray
+            this.sortSwitchId = 1
+            document.getElementById('speedSortButton').style['text-decoration']='underline'
+            document.getElementById('idSortButton').style['text-decoration']='none'
+            if (this.sortSwitchSpeed === 1) {
+                this.dataArray = dataArray.sort((a, b) => a.speed < b.speed ? 1 : -1)
+                this.sortSwitchSpeed = -1
+            }
+            else {
+                this.dataArray = dataArray.sort((a, b) => a.speed > b.speed ? 1 : -1)
+                this.sortSwitchSpeed = 1
+            }
+        },               
         parseDate(time) {
             month = time.slice(5, 7)
             date = time.slice(8, 10)
