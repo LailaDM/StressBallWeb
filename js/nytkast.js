@@ -115,27 +115,27 @@ Vue.createApp({
             //console.log(data.speed)
             if (data.speed < 4.0) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(255, 0, 0)";
-            } else if (data.speed <= 4.6) {
+            } else if (data.speed <= 4.2) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(230, 4, 4)";
-            } else if (data.speed <= 5.2) {
+            } else if (data.speed <= 5.4) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(201, 5, 5)";
-            } else if (data.speed <= 5.8) {
+            } else if (data.speed <= 6.6) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(167, 3, 3)";
-            } else if (data.speed <= 6.4) {
+            } else if (data.speed <= 7.8) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(255, 255, 0)";
-            } else if (data.speed <= 7.0) {
+            } else if (data.speed <= 9.0) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(242, 242, 4)";
-            } else if (data.speed <= 7.6) {
+            } else if (data.speed <= 10.2) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(218, 218, 22)";
-            } else if (data.speed <= 8.2) {
+            } else if (data.speed <= 11.4) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(203, 203, 33)";
-            } else if (data.speed <= 8.8) {
+            } else if (data.speed <= 12.6) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(17, 252, 17)";
-            } else if (data.speed <= 9.4) {
+            } else if (data.speed <= 13.8) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(4, 201, 4,)";
-            } else if (data.speed <= 10.0) {
+            } else if (data.speed <= 15.0) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(2, 171, 2)";
-            } else if (data.speed > 10.6) {
+            } else if (data.speed > 15.0) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(3, 142, 3)";
             } else {
                 console.log("Colour box error")
