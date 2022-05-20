@@ -114,29 +114,25 @@ Vue.createApp({
             });
             //console.log(data.speed)
             if (data.speed < 4.0) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(255, 0, 0)";
-            } else if (data.speed <= 4.2) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(230, 4, 4)";
-            } else if (data.speed <= 5.4) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(201, 5, 5)";
-            } else if (data.speed <= 6.6) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(167, 3, 3)";
+                this.$refs.StressBox.style.backgroundColor = "rgb(253, 72, 72)";
+            } else if (data.speed <= 5.2) {
+                this.$refs.StressBox.style.backgroundColor = "rgba(250, 38, 38, 0.995)";
+            } else if (data.speed <= 6.4) {
+                this.$refs.StressBox.style.backgroundColor = "rgb(249, 26, 26)";
             } else if (data.speed <= 7.8) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(255, 255, 0)";
+                this.$refs.StressBox.style.backgroundColor = "rgb(231, 3, 3)";
             } else if (data.speed <= 9.0) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(242, 242, 4)";
+                this.$refs.StressBox.style.backgroundColor = "rgb(180, 3, 3)";
             } else if (data.speed <= 10.2) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(218, 218, 22)";
+                this.$refs.StressBox.style.backgroundColor = "rgb(17, 77, 2)";
             } else if (data.speed <= 11.4) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(203, 203, 33)";
+                this.$refs.StressBox.style.backgroundColor = "rgb(15, 109, 0)";
             } else if (data.speed <= 12.6) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(17, 252, 17)";
+                this.$refs.StressBox.style.backgroundColor = "rgb(5, 160, 20)";
             } else if (data.speed <= 13.8) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(4, 201, 4,)";
-            } else if (data.speed <= 15.0) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(2, 171, 2)";
+                this.$refs.StressBox.style.backgroundColor = "rgb(15, 201, 4)";
             } else if (data.speed > 15.0) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(3, 142, 3)";
+                this.$refs.StressBox.style.backgroundColor = "rgb(2, 209, 6)";
             } else {
                 console.log("Colour box error")
             }
