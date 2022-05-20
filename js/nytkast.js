@@ -77,7 +77,7 @@ Vue.createApp({
             });
             if (this.oldID != data.id) {
                 this.oldID = data.id
-                if (data.speed < 4) {
+                if (data.speed < 10) {
                     //console.log("message handler requested insult")
                     this.getInsult()
                     setTimeout(() => {this.speechSynthesis()},500)
