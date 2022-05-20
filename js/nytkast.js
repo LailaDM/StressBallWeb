@@ -116,13 +116,13 @@ Vue.createApp({
             if (data.speed < 4.0) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(253, 72, 72)";
             } else if (data.speed <= 5.2) {
-                this.$refs.StressBox.style.backgroundColor = "rgba(250, 38, 38, 0.995)";
+                this.$refs.StressBox.style.backgroundColor = "rgb(253, 30, 30)";
             } else if (data.speed <= 6.4) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(249, 26, 26)";
+                this.$refs.StressBox.style.backgroundColor = "rgb(231, 0, 0)";
             } else if (data.speed <= 7.8) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(231, 3, 3)";
+                this.$refs.StressBox.style.backgroundColor = "rgb(179, 0, 0)";
             } else if (data.speed <= 9.0) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(180, 3, 3)";
+                this.$refs.StressBox.style.backgroundColor = "rgb(144, 0, 0)";
             } else if (data.speed <= 10.2) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(17, 77, 2)";
             } else if (data.speed <= 11.4) {
@@ -132,7 +132,7 @@ Vue.createApp({
             } else if (data.speed <= 13.8) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(15, 201, 4)";
             } else if (data.speed > 15.0) {
-                this.$refs.StressBox.style.backgroundColor = "rgb(2, 209, 6)";
+                this.$refs.StressBox.style.backgroundColor = "rgb(5, 255, 9)";
             } else {
                 console.log("Colour box error")
             }
