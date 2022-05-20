@@ -30,6 +30,9 @@ Vue.createApp({
         },
         sortById() {
             dataArray = this.dataArray
+            this.sortSwitchSpeed = 1
+            document.getElementById('idSortButton').style['text-decoration']='underline'
+            document.getElementById('speedSortButton').style['text-decoration']='none'
             if (this.sortSwitchId === 1) {
                 this.dataArray = dataArray.sort((a, b) => a.id < b.id ? 1 : -1)
                 this.sortSwitchId = -1
@@ -41,6 +44,9 @@ Vue.createApp({
         },
         sortBySpeed() {
             dataArray = this.dataArray
+            this.sortSwitchId = 1
+            document.getElementById('speedSortButton').style['text-decoration']='underline'
+            document.getElementById('idSortButton').style['text-decoration']='none'
             if (this.sortSwitchSpeed === 1) {
                 this.dataArray = dataArray.sort((a, b) => a.speed < b.speed ? 1 : -1)
                 this.sortSwitchSpeed = -1
