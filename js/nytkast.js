@@ -113,15 +113,15 @@ Vue.createApp({
             //console.log(data.speed)
             if (data.speed < 4.0) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(253, 72, 72)";
-            } else if (data.speed <= 5.2) {
+            } else if (data.speed <= 5) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(253, 30, 30)";
-            } else if (data.speed <= 6.4) {
+            } else if (data.speed <= 6) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(231, 0, 0)";
-            } else if (data.speed <= 7.8) {
+            } else if (data.speed <= 7) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(179, 0, 0)";
-            } else if (data.speed <= 9.0) {
+            } else if (data.speed <= 8) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(144, 0, 0)";
-            } else if (data.speed <= 10.2) {
+            } else if (data.speed <= 9) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(17, 77, 2)";
             } else if (data.speed <= 10) {
                 this.$refs.StressBox.style.backgroundColor = "rgb(15, 109, 0)";
