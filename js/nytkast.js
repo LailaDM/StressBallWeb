@@ -88,8 +88,6 @@ Vue.createApp({
                     setTimeout(() => {this.speechSynthesis()},500)
                 }
             }
-
-
         },
 
         parseDate(time) {
